@@ -183,8 +183,8 @@ details p{animation:dIn .35s cubic-bezier(.2,.7,.2,1)}
 .tapebar .back{font-family:var(--mono);font-weight:500;letter-spacing:.18em;text-decoration:none;font-size:13px;color:#140505}
 .tapebar .mono{font-weight:500}
 .tapebar .count{color:#140505}.tapebar .count b{color:#140505}
-.outline{color:transparent;-webkit-text-stroke:2px var(--acc)}
-.display em.outline{color:transparent}
+.outline{color:transparent;-webkit-text-fill-color:transparent;-webkit-text-stroke:2px var(--acc)}
+.display em.outline{color:transparent;-webkit-text-fill-color:transparent}
 .casemeta{margin-top:26px;border-top:2px solid var(--ink)}
 .casemeta div{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid var(--rule)}
 .casemeta span{color:var(--mute)}.casemeta b{font-weight:500;color:var(--ink)}
