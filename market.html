@@ -1,18 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Archive · Unsend</title>
-<meta name="description" content="Unsend archive: every recovered case file, its recovery class, its message status and its owner, read live from BNB Chain.">
+<title>档案 · Unsend</title>
+<meta name="description" content="Unsend 档案：每一个已恢复的案件、它的恢复等级、消息状态与持有者，实时读取自 BNB Chain。">
 <meta name="theme-color" content="#08090C">
-<meta property="og:title" content="Unsend Archive">
-<meta property="og:description" content="Every recovered case, its verdict and its owner.">
+<meta property="og:title" content="Unsend 档案">
+<meta property="og:description" content="每一个已恢复的案件、它的结论与持有者。">
 <meta property="og:image" content="https://unsend.games/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/site.css">
 <style>
 .mk-head{padding:64px 20px 28px;max-width:1080px;margin:0 auto}
@@ -41,40 +41,40 @@
 <body>
 <header class="tapebar">
   <a class="back" href="/">← UNSEND</a>
-  <span class="mono">Evidence · Archive</span>
+  <span class="mono">证据 · 档案</span>
   <span class="count mono"><b id="barCount">0</b>/8,888</span>
 </header>
-<nav class="nav mono solo"><a href="/#placeholder">Placeholder</a><a href="/#recover">Recover</a><a href="/#claim">Claim</a><a href="/market" aria-current="page">Archive</a></nav>
+<nav class="nav mono solo"><a href="/#recover">铸造</a><a href="/#claim">领取</a><a href="/case">案件档案</a><a href="/market" class="mk-pill" aria-current="page">市场</a></nav>
 
 <section class="mk-head">
-  <span class="mono" style="color:var(--acc)">Case 06 · Exchange</span>
-  <h1 class="display">Archive.<br><em class="outline">Every case, every holder.</em></h1>
-  <p>Every Unsend case file recovered so far, read live from BNB Chain with its recovery class, its message status and its holder. Trading runs through Element on BNB Chain once the collection is indexed there.</p>
+  <span class="mono" style="color:var(--acc)">案件 06 · 交易</span>
+  <h1 class="display">档案。<br><em class="outline">每个案件，每位持有者。</em></h1>
+  <p>截至目前恢复的每一个 Unsend 案件，实时读取自 BNB Chain，附带恢复等级、消息状态与持有者。合集在 Element 上架后，交易通过 BNB Chain 上的 Element 进行。</p>
   <div class="casemeta mono">
-    <div><span>Locker</span><b>UNSEND</b></div>
-    <div><span>Cases</span><b>8,888</b></div>
-    <div><span>Mode</span><b>Agent recovery only</b></div>
-    <div><span>Source</span><b>Live from BNB Chain</b></div>
+    <div><span>证据柜</span><b>UNSEND</b></div>
+    <div><span>案件</span><b>8,888</b></div>
+    <div><span>模式</span><b>仅智能体恢复</b></div>
+    <div><span>来源</span><b>BNB Chain 实时读取</b></div>
   </div>
   <div class="mk-stats mono">
-    <div><b id="sMinted">…</b>Recovered</div>
-    <div><b id="sOwners">…</b>Holders</div>
-    <div><b>8,888</b>Max supply</div>
+    <div><b id="sMinted">…</b>已铸造</div>
+    <div><b id="sOwners">…</b>持有者</div>
+    <div><b>8,888</b>总量上限</div>
   </div>
   <div class="cta" style="margin-top:28px;display:flex;gap:10px;flex-wrap:wrap">
-    <a class="btn line" href="https://bscscan.com/token/0x6f8C7984e3C857E8Fbe55A75D3d5FFc9E4a19DcA" target="_blank" rel="noopener">Contract on BscScan</a>
+    <a class="btn line" href="https://bscscan.com/token/0x6f8C7984e3C857E8Fbe55A75D3d5FFc9E4a19DcA" target="_blank" rel="noopener">在 BscScan 查看合约</a>
   </div>
 </section>
 
 <div class="mk-tools"><div class="in">
-  <input id="q" placeholder="Search # or paste a wallet 0x…" autocomplete="off" spellcheck="false" aria-label="Search by id or wallet">
-  <select id="fCls" aria-label="Recovery class"><option value="">All recoveries</option><option value="2">Restored</option><option value="1">Shard</option><option value="0">Ash</option></select>
-  <select id="fPal" aria-label="Surface"><option value="">All surfaces</option></select>
-  <select id="sort" aria-label="Sort"><option value="new">Newest</option><option value="old">Oldest</option></select>
+  <input id="q" placeholder="搜索编号 # 或粘贴钱包地址 0x…" autocomplete="off" spellcheck="false" aria-label="按编号或钱包搜索">
+  <select id="fCls" aria-label="恢复等级"><option value="">全部恢复等级</option><option value="2">已恢复</option><option value="1">碎片</option><option value="0">灰烬</option></select>
+  <select id="fPal" aria-label="表面"><option value="">全部表面</option></select>
+  <select id="sort" aria-label="排序"><option value="new">最新</option><option value="old">最早</option></select>
 </div></div>
 
-<main class="mk-grid" id="grid"><div class="mk-empty mono">Reading BNB Chain…</div></main>
-<p class="mk-note">Unsend is a standard ERC-721 on BNB Chain. Contract: <span class="mono">0x6f8C7984e3C857E8Fbe55A75D3d5FFc9E4a19DcA</span></p>
+<main class="mk-grid" id="grid"><div class="mk-empty mono">正在读取 BNB Chain…</div></main>
+<p class="mk-note">Unsend 是 BNB Chain 上的标准 ERC-721。合约： <span class="mono">0x6f8C7984e3C857E8Fbe55A75D3d5FFc9E4a19DcA</span></p>
 
 <script src="/js/art.js"></script>
 <script src="/js/chain.js"></script>
@@ -89,12 +89,12 @@ function render() {
   if (q) list = /^0x[0-9a-f]{40}$/.test(q) ? list.filter((x) => x.owner.toLowerCase() === q) : list.filter((x) => String(x.id) === q.replace('#', '') || x.clsName.toLowerCase().includes(q) || x.msgLabel.toLowerCase().includes(q));
   list.sort((a, b) => $('#sort').value === 'old' ? a.id - b.id : b.id - a.id);
   const g = $('#grid'); g.innerHTML = '';
-  if (!list.length) { g.innerHTML = '<div class="mk-empty mono">No case files match.</div>'; return; }
+  if (!list.length) { g.innerHTML = '<div class="mk-empty mono">没有符合条件的案件。</div>'; return; }
   for (const x of list) {
     const d = document.createElement('article'); d.className = 'mk-card rv';
     d.innerHTML = `<a class="art" href="https://bscscan.com/token/0x6f8C7984e3C857E8Fbe55A75D3d5FFc9E4a19DcA?a=${x.id}" target="_blank" rel="noopener"><img loading="lazy" src="${x.img}" alt="Unsend #${x.id}"></a>
-      <div class="meta"><h3>UNSEND #${x.id}</h3><p class="mono">${x.clsName} · ${x.palette} · Recalled after ${x.recalled}</p><p class="mono">${x.msgLabel}</p><p class="mono">Holder <a href="https://bscscan.com/address/${x.owner}" target="_blank" rel="noopener">${short(x.owner)}</a></p></div>
-      <div class="acts"><a class="btn line" href="${x.element}" target="_blank" rel="noopener">Element</a><a class="btn ink" href="https://bscscan.com/token/0x6f8C7984e3C857E8Fbe55A75D3d5FFc9E4a19DcA?a=${x.id}" target="_blank" rel="noopener">Inspect</a></div>`;
+      <div class="meta"><h3>UNSEND #${x.id}</h3><p class="mono">${x.clsName} · ${x.palette} · 撤回时间 ${x.recalled}</p><p class="mono">${x.msgLabel}</p><p class="mono">持有者 <a href="https://bscscan.com/address/${x.owner}" target="_blank" rel="noopener">${short(x.owner)}</a></p></div>
+      <div class="acts"><a class="btn line" href="${x.element}" target="_blank" rel="noopener">Element</a><a class="btn ink" href="https://bscscan.com/token/0x6f8C7984e3C857E8Fbe55A75D3d5FFc9E4a19DcA?a=${x.id}" target="_blank" rel="noopener">查看</a></div>`;
     g.appendChild(d);
   }
 }
@@ -102,7 +102,7 @@ window.UnsendChain.market().then((j) => {
   ALL = j.items || []; $('#sMinted').textContent = j.minted.toLocaleString('en'); $('#sOwners').textContent = j.owners.toLocaleString('en'); $('#barCount').textContent = j.minted;
   opts($('#fPal'), ALL.map((x) => x.palette)); render();
   if (window.UnsendSmooth) window.UnsendSmooth();
-}).catch(() => { $('#grid').innerHTML = '<div class="mk-empty mono">Could not reach BNB Chain. Refresh in a moment.</div>'; });
+}).catch(() => { $('#grid').innerHTML = '<div class="mk-empty mono">无法连接 BNB Chain。请稍后刷新。</div>'; });
 ['#q', '#fCls', '#fPal', '#sort'].forEach((s) => $(s).addEventListener('input', render));
 </script>
 <script src="/js/smooth.js" defer></script>

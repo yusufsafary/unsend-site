@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>案件档案 · Unsend</title>
+<meta name="description" content="Unsend 案件档案：占位符、重建样例、恢复台、十二条消息追踪与证据柜日志。铸造与领取在首页。">
+<meta name="theme-color" content="#08090C">
+<meta property="og:title" content="Unsend 案件档案">
+<meta property="og:description" content="概念、恢复台、样例重建与十二条失踪消息，都在这里。">
+<meta property="og:image" content="https://unsend.games/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
+<style>
+.cs-head{padding:60px 20px 10px;max-width:1080px;margin:0 auto}
+.cs-kick{display:inline-block;background:var(--acc);color:#140505;font-family:var(--mono);font-weight:500;font-size:11.5px;letter-spacing:.14em;padding:7px 12px;text-transform:uppercase}
+.cs-head h1{font-size:clamp(58px,14vw,138px);margin:20px 0 8px;line-height:1}
+.cs-head p{max-width:640px;color:var(--mute)}
+</style>
+</head>
+<body>
+<header class="tapebar">
+  <a class="back" href="/">← UNSEND</a>
+  <span class="mono">证据 · 案件档案</span>
+  <span class="count mono"><b id="barCount">0</b>/8,888</span>
+</header>
+<nav class="nav mono solo"><a href="/#recover">铸造</a><a href="/#claim">领取</a><a href="/case" aria-current="page">案件档案</a><a href="/market" class="mk-pill">市场</a></nav>
+
+<section class="cs-head">
+  <span class="cs-kick">证据柜 · 档案室</span>
+  <h1 class="display">案件档案<br><em class="outline">每一份，都在这里。</em></h1>
+  <p>概念、恢复台、样例重建、十二条消息追踪与证据柜日志。铸造与领取在首页进行，这里只保存档案。</p>
+  <div class="casemeta mono">
+    <div><span>证据柜</span><b>UNSEND</b></div>
+    <div><span>案件</span><b>8,888</b></div>
+    <div><span>模式</span><b>仅智能体恢复</b></div>
+    <div><span>来源</span><b>BNB Chain 实时读取</b></div>
+  </div>
+</section>
+
+<main id="top">
+  <section class="sec" id="demo">
+    <div class="demo" id="demoPanelWrap">
+      <div id="demoPanel">
+        <div class="demo-stage" id="demoStage"></div>
+        <div class="demo-bar">
+          <div class="demo-meta">
+            <div class="mono" id="demoRead">恢复台 · 演示种子</div>
+            <p class="demo-note" id="demoNote">按下按钮。恢复台运行的正是绘制本系列的同一套代码。</p>
+          </div>
+          <button class="btn ink" id="demoBtn" type="button">尝试恢复</button>
+          <span class="mono">尝试次数 <b id="demoCount">0</b></span>
+        </div>
+      </div>
+    </div>
+    <figure class="hero-art"><img src="/art/hero.svg" alt="一份 Unsend 案件档案：一个聊天气泡，里面是完整恢复的消息" width="800" height="800"><figcaption class="mono">演示案件 · Slate · 完整恢复 · 第 2 条消息</figcaption></figure>
+    <div class="hero-foot mono"><span>8,888 份案件档案</span><span>BNB Chain</span><span>仅限 Binance Agentic Wallet</span></div>
+  </section>
+
+  <section class="sec" id="placeholder">
+    <div class="art-no mono">案件 01 · 占位符</div>
+    <h2 class="display">只剩下一行灰色。</h2>
+    <p class="body">人人都懂这一招：打出来、发出去、读一遍，在对方醒来之前撤回。平台对此很客气。你的消息消失，一句小小的灰色文字取代它的位置，仿佛什么都没写过。</p>
+    <div class="mockbubble" aria-hidden="true">
+      <span class="bar"></span>
+      <span class="was">此消息已撤回</span>
+      <div class="who mono"><span>发送 02:47</span><span>撤回 02:47</span></div>
+    </div>
+    <p class="body">Unsend 保存的是另一个版本。每一次铸造都会在证据柜中打开一份案件档案，并从铸造那一刻固定在链上的种子重建消息。这是取证，不是怀旧：种子决定气泡能被重建多少，合约在铸造时、在任何人看到图画之前，就记录下结论。</p>
+    <p class="body">大多数案件回来时只剩灰烬。有些会带回一个碎片，涂改之下仍有几个词可读。极少数，大约百分之三，一条消息会完整归来：十二条被撤回的消息之一，散布在整个系列中，等待被找到、被重新阅读。</p>
+  </section>
+
+  <section class="sec" id="reconstructions">
+    <div class="art-no mono">案件 02 · 重建</div>
+    <h2 class="display">四份案件档案，重新打开。</h2>
+    <p class="body">由绘制本系列的同一套代码、从演示种子画出的样例重建。像读案件档案一样读它们：顶部是页眉，中间是气泡，下方是结论。把鼠标悬停在碎片上：它还在闪烁故障。</p>
+    <div class="forms" id="formGrid"></div>
+    <div class="pals" id="pals"></div>
+    <p class="body small">四种证据表面：Slate、Bruise、Petrol 与 Ember。撤回窗口从 9 秒到 2 小时，由种子固定，印在每一份档案里。</p>
+    <div class="ledger">
+      <div class="l-row"><span class="k mono">恢复 · 灰烬</span><span class="v">88,888 $UNSD</span></div>
+      <div class="l-row"><span class="k mono">恢复 · 碎片</span><span class="v">288,888 $UNSD</span></div>
+      <div class="l-row"><span class="k mono">恢复 · 已恢复</span><span class="v">2,888,888 $UNSD</span></div>
+    </div>
+    <p class="body small">领取金额取决于每件作品的恢复等级，每份案件档案向其持有者支付一次。规则见案件 04。</p>
+  </section>
+
+  <section class="sec" id="tracker">
+    <div class="art-no mono">案件 04 · 消息追踪</div>
+    <h3 class="display" style="font-size:22px;margin:38px 0 4px">十二条消息，仍在缺失。</h3>
+    <p class="body small">当已恢复作品在链上被恢复并确认时，对应槽位会亮起红色，每条消息一个。证据柜的人不公布名单：它由收藏者们补全。</p>
+    <div class="slots" id="slots"></div>
+    <div class="check">
+      <label class="mono" for="work">查询案件档案</label>
+      <div class="check-row">
+        <input id="work" placeholder="作品编号，1 到 8,888" autocomplete="off" spellcheck="false" inputmode="numeric">
+        <button class="btn sm line" id="workBtn">查询</button>
+      </div>
+      <p class="mono" id="workOut"></p>
+    </div>
+  </section>
+
+  <section class="sec" id="archive">
+    <div class="art-no mono">案件 05 · 档案</div>
+    <h2 class="display">最新恢复。</h2>
+    <p class="body">新鲜出炉的案件档案，落地即从链上读取。带持有者与筛选的完整档案在市场里。</p>
+    <div class="gallery" id="gallery"><div class="empty mono">尚无案件被恢复。证据柜暂时关着。</div></div>
+  </section>
+
+  <section class="sec" id="market">
+    <div class="art-no mono">案件 06 · 交易</div>
+    <h2 class="display">交易被撤回的。</h2>
+    <p class="body">已恢复的案件在 Element（BNB Chain）上易手。本站保存档案：每一件已铸造的作品、它的恢复等级、消息状态与当前持有者，实时读取。</p>
+    <div class="cta" style="margin-top:26px"><a class="btn ink" href="/market">打开档案</a><a class="btn line" href="https://element.market/collections/unsend" target="_blank" rel="noopener">Element 合集</a></div>
+  </section>
+
+  <section class="sec" id="log">
+    <div class="art-no mono">案件 07 · 日志</div>
+    <h2 class="display">证据柜日志。</h2>
+    <details><summary>谁能恢复案件档案？</summary><p>任何持有 Binance Agent ID 的钱包，通过其 Binance Agentic Wallet 智能体。浏览器无法在这里铸造，合约也不能：恢复必须来自钱包本身。</p></details>
+    <details><summary>是什么决定一条消息能留下多少？</summary><p>铸造区块中固定在链上的种子。表面、撤回窗口与片段都由它通过开源代码得出，这套代码也运行在本页面中。恢复等级不是画图的运气：合约用同一个种子计算它，领取合约按它付款。</p></details>
+    <details><summary>十二条消息是什么？</summary><p>十二条真实的被撤回消息，编号 1 到 12，散布在最稀有的作品中。已恢复作品会完整印出它的消息。碎片带有其中一条清晰可读的片段。灰烬什么都不带，并且明说如此。</p></details>
+    <details><summary>$UNSD 领取如何运作？</summary><p>每件作品一次，由其当前持有者领取，金额按恢复等级：88,888、288,888 或 2,888,888 $UNSD。领取将在领取池注资后开放；领取手册中带有确切的调用。</p></details>
+    <details><summary>一件作品存在于哪里？</summary><p>种子存在于 BNB Chain 上。绘图代码是开源的并运行在本页面中，因此任何人都能从种子重绘任何一份 Unsend 案件档案。元数据与 artwork 文件由本站提供。</p></details>
+  </section>
+</main>
+
+<footer class="foot mono">
+  <span>UNSEND · 8,888 份案件档案</span>
+  <a href="https://bscscan.com/address/0x6f8C7984e3C857E8Fbe55A75D3d5FFc9E4a19DcA" target="_blank" rel="noopener">NFT 合约 0x6f8C…9DcA ↗</a>
+  <a href="https://bscscan.com/address/0xfE37A7eBCC6DA7E625d7E744b4FeFE1E48a9892C" target="_blank" rel="noopener">领取合约 0xfE37…892C ↗</a>
+</footer>
+
+<script src="/js/art.js"></script>
+<script src="/js/chain.js"></script>
+<script src="/js/site.js"></script>
+<script src="/js/claim.js"></script>
+<script src="/js/smooth.js" defer></script>
+</body>
+</html>

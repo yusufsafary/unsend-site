@@ -266,7 +266,7 @@
               id: id, owner: owner, seed: seed,
               cls: st.cls, clsName: st.clsName, palette: st.palette,
               recalled: st.recalled, msgIndex: st.msgIndex, message: st.message,
-              msgLabel: st.cls === 2 ? 'Message No. ' + (st.msgIndex + 1) : (st.cls === 1 ? 'Fragment of No. ' + (st.msgIndex + 1) : 'No message'),
+              msgLabel: st.cls === 2 ? '第 ' + (st.msgIndex + 1) + ' 条消息' : (st.cls === 1 ? '第 ' + (st.msgIndex + 1) + ' 条消息的片段' : '无消息'),
               img: '/art/' + id + '.svg',
               element: 'https://element.market/assets/bsc/' + NFT + '/' + id
             });

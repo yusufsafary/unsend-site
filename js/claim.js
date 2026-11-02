@@ -4,13 +4,12 @@
   const $ = (s) => document.querySelector(s);
   const fmt = (n) => n.toLocaleString('en');
   const fmtTok = (wei) => fmt(Number(BigInt(wei) / 1000000000000000000n));
-  if (!$('#claim')) return;
 
   function paint(c) {
     const cc = $('#cClaimed'); if (cc) cc.textContent = fmt(c.claimed);
     const cf = $('#cFill'); if (cf) cf.style.width = (c.claimed / c.max * 100).toFixed(2) + '%';
     const st = $('#cStatus');
-    if (st) st.textContent = c.open ? 'Claims open' : 'Opening soon';
+    if (st) st.textContent = c.open ? '领取已开放' : '即将开放';
   }
   function poll() {
     if (!window.UnsendChain) return;
@@ -24,7 +23,7 @@
     const box = $('#slots');
     if (!box || !window.UnsendArt) return;
     box.innerHTML = window.UnsendArt.MESSAGES.map(function (m, i) {
-      return '<div class="slot" data-slot="' + i + '"><div class="no">MESSAGE NO. ' + String(i + 1).padStart(2, '0') + ' / 12</div><div class="w">············</div></div>';
+      return '<div class="slot" data-slot="' + i + '"><div class="no">消息编号 ' + String(i + 1).padStart(2, '0') + ' / 12</div><div class="w">············</div></div>';
     }).join('');
     if (!window.UnsendChain) return;
     window.UnsendChain.tracker().then(function (t) {
@@ -41,19 +40,19 @@
   const btn = $('#workBtn'), out = $('#workOut'), inp = $('#work');
   if (btn) btn.addEventListener('click', function () {
     const id = parseInt((inp.value || '').replace(/[^0-9]/g, ''), 10);
-    if (!id || id < 1 || id > 8888) { out.textContent = 'Enter a work number from 1 to 8,888.'; return; }
-    out.textContent = 'Reading contracts…';
+    if (!id || id < 1 || id > 8888) { out.textContent = '请输入 1 到 8,888 之间的作品编号。'; return; }
+    out.textContent = '正在读取合约…';
     window.UnsendChain.stats().then(function (s) {
-      if (id > s.minted) { out.textContent = 'Case #' + id + ' has not been recovered yet.'; return null; }
+      if (id > s.minted) { out.textContent = '案件 #' + id + ' 尚未被恢复。'; return null; }
       return window.UnsendChain.claimInfo(id).then(function (c) {
-        if (c.claimedForId) { out.textContent = 'Case #' + id + ': $UNSD already claimed.'; return; }
-        const clsName = c.recoveryClass === 2 ? 'Restored' : (c.recoveryClass === 1 ? 'Shard' : 'Ash');
+        if (c.claimedForId) { out.textContent = '案件 #' + id + '：$UNSD 已领取。'; return; }
+        const clsName = c.recoveryClass === 2 ? '已恢复' : (c.recoveryClass === 1 ? '碎片' : '灰烬');
         const msg = window.UnsendArt ? window.UnsendArt.MESSAGES[c.messageIndex] : '';
         const detail = c.recoveryClass === 2
-          ? ' Message No. ' + (c.messageIndex + 1) + ' recovered in full: "' + msg + '"'
-          : (c.recoveryClass === 1 ? ' It carries a fragment of message No. ' + (c.messageIndex + 1) + '.' : ' Nothing of its message survived.');
-        out.textContent = 'Case #' + id + ': unclaimed. Recovery ' + clsName + ', worth ' + fmtTok(c.amountWei) + ' $UNSD.' + detail + ' Owner ' + (c.owner ? c.owner.slice(0, 6) + '…' + c.owner.slice(-4) : 'unknown') + ' can claim it.';
+          ? ' 第 ' + (c.messageIndex + 1) + ' 条消息已完整恢复：\u201c' + msg + '\u201d'
+          : (c.recoveryClass === 1 ? ' 它带有第 ' + (c.messageIndex + 1) + ' 条消息的一个片段。' : ' 它的消息什么都没留下。');
+        out.textContent = '案件 #' + id + '：尚未领取。恢复等级 ' + clsName + '，价值 ' + fmtTok(c.amountWei) + ' $UNSD。' + detail + ' 持有者 ' + (c.owner ? c.owner.slice(0, 6) + '…' + c.owner.slice(-4) : '未知') + ' 可以领取。';
       });
-    }).catch(function () { out.textContent = 'Could not reach BNB Chain. Try again.'; });
+    }).catch(function () { out.textContent = '无法连接 BNB Chain。请重试。'; });
   });
 })();

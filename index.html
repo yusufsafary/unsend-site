@@ -1,185 +1,105 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Unsend · It was sent. Then it wasn't.</title>
-<meta name="description" content="Unsend: 8,888 forensic reconstructions on BNB Chain. Every work rebuilds a message that was sent, then unsent: ash, a shard, or the full message recovered. Recovery runs through AI agents only.">
+<title>Unsend · 它发出去了。然后又没了。</title>
+<meta name="description" content="Unsend：BNB Chain 上的 8,888 份取证重建。每一件作品都重建一条发出后又被撤回的消息：灰烬、碎片，或者完整恢复的消息。恢复仅通过 AI 智能体进行。">
 <meta name="theme-color" content="#08090C">
 <meta property="og:title" content="Unsend">
-<meta property="og:description" content="It was sent. Then it wasn't. 8,888 taken-back messages, reconstructed by agents only.">
+<meta property="og:description" content="它发出去了。然后又没了。8,888 条被撤回的消息，仅由智能体重建。">
 <meta property="og:image" content="https://unsend.games/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/site.css">
 </head>
 <body>
-<div class="notice">Recovery opens 2 Nov 2026 · 11.00 UTC · Agents only</div>
 <header class="mast">
-  <div class="mast-top mono"><span>Unsend · Evidence locker · BNB Chain</span><span class="count"><i></i><b id="barCount">0</b>/8,888 cases</span></div>
+  <div class="mast-top mono"><span>Unsend · 证据柜 · BNB Chain</span><span class="count"><i></i><b id="barCount">0</b>/8,888 个案件</span></div>
   <div class="mast-word" aria-label="UNSEND">UN<span class="wm-bar" aria-hidden="true"></span>ND</div>
-  <div><span class="unsent-pill"><i></i>This message was unsent</span></div>
-  <nav class="nav mono"><a href="#placeholder">Placeholder</a><a href="#reconstructions">Reconstructions</a><a href="#recover">Recover</a><a href="#claim">Claim</a><a href="#archive">Archive</a><a href="/market" class="mk-pill">Market</a></nav>
+  <div><span class="unsent-pill"><i></i>此消息已撤回</span></div>
+  <nav class="nav mono"><a href="#recover">铸造</a><a href="#claim">领取</a><a href="/case">案件档案</a><a href="/market" class="mk-pill">市场</a></nav>
 </header>
 <div class="redact" aria-hidden="true"><span style="width:12%"></span><span style="width:26%"></span><span style="width:7%"></span><span style="width:34%"></span><span style="width:11%"></span><span style="width:22%"></span></div>
 
 <main id="top">
   <section class="hero">
     <div class="hero-in">
-      <h1 class="display">It was sent. Then it <em>wasn't.</em></h1>
-      <p class="lede">8,888 case files on BNB Chain. Each one is a forensic reconstruction of a message that was sent, then taken back, leaving only a gray placeholder behind. An on-chain seed decides what survived: nothing, a shard, or the whole message, word for word.</p>
-      <div class="cta"><a class="btn ink" href="#recover">Recover as an agent</a><a class="btn line" href="#demo">Try the bench</a></div>
+      <h1 class="display">它发出去了。然后<em>又没了。</em></h1>
+      <p class="lede">BNB Chain 上的 8,888 份案件档案。每一份都是一次取证重建：重建一条发出后又被撤回的消息，只留下一行灰色占位符。链上种子决定留下了什么：什么都没有、一个碎片，或者完整的消息，一字不差。</p>
+      <div class="cta"><a class="btn ink" href="#recover">开始恢复</a><a class="btn line" href="/case">案件档案</a></div>
     </div>
-    <div class="demo" id="demo">
-      <div id="demoPanel">
-        <div class="demo-stage" id="demoStage"></div>
-        <div class="demo-bar">
-          <div class="demo-meta">
-            <div class="mono" id="demoRead">Recovery bench · Demonstration seed</div>
-            <p class="demo-note" id="demoNote">Press the button. The bench runs the same code that draws the edition.</p>
-          </div>
-          <button class="btn ink" id="demoBtn" type="button">Attempt recovery</button>
-          <span class="mono">Attempts <b id="demoCount">0</b></span>
-        </div>
-      </div>
-    </div>
-    <figure class="hero-art"><img src="/art/hero.svg" alt="An Unsend case file: a chat bubble holding a fully recovered message" width="800" height="800"><figcaption class="mono">Demonstration case · Slate · Recovered in full · Message No. 2</figcaption></figure>
-    <div class="hero-foot mono"><span>8,888 case files</span><span>BNB Chain</span><span>Binance Agentic Wallets only</span></div>
-  </section>
-
-  <section class="sec" id="placeholder">
-    <div class="art-no mono">Case 01 · Placeholder</div>
-    <h2 class="display">A gray line is all that stays.</h2>
-    <p class="body">Everyone knows the move: type it, send it, read it once, and take it back before the other side wakes up. The platform is polite about it. Your message vanishes and a small gray sentence takes its place, as if nothing had ever been written.</p>
-    <div class="mockbubble" aria-hidden="true">
-      <span class="bar"></span>
-      <span class="was">This message was unsent</span>
-      <div class="who mono"><span>Sent 02:47</span><span>Recalled 02:47</span></div>
-    </div>
-    <p class="body">Unsend keeps the other version. Every mint opens one case file in the evidence locker and rebuilds the message from a seed fixed on-chain at that moment. Forensics, not nostalgia: the seed decides how much of the bubble can be reconstructed, and the contract records the verdict at mint, before anyone sees the drawing.</p>
-    <p class="body">Most cases come back as ash. Some return a shard, a few words still legible under redaction. Rarely, about three in a hundred, a message returns whole, one of twelve taken-back messages scattered across the edition, waiting to be found and read again.</p>
-  </section>
-
-  <section class="sec" id="reconstructions">
-    <div class="art-no mono">Case 02 · Reconstructions</div>
-    <h2 class="display">Four case files, reopened.</h2>
-    <p class="body">Sample reconstructions drawn by the same code that draws the edition, from demonstration seeds. Read them like case files: header at the top, the bubble in the middle, the verdict below. Hover the shard: it still glitches.</p>
-    <div class="forms" id="formGrid"></div>
-    <div class="pals" id="pals"></div>
-    <p class="body small">Four evidence surfaces: Slate, Bruise, Petrol and Ember. Recall windows run from 9 seconds to 2 hours, fixed by the seed, printed in every file.</p>
-    <div class="ledger">
-      <div class="l-row"><span class="k mono">Recovery · Ash</span><span class="v">88,888 $UNSD</span></div>
-      <div class="l-row"><span class="k mono">Recovery · Shard</span><span class="v">288,888 $UNSD</span></div>
-      <div class="l-row"><span class="k mono">Recovery · Restored</span><span class="v">2,888,888 $UNSD</span></div>
-    </div>
-    <p class="body small">Claim values follow the recovery class of each work, paid once per case file to its holder. Rules live in Case 04.</p>
   </section>
 
   <section class="sec tape" id="recover">
-    <div class="art-no mono">Case 03 · Recover</div>
-    <h2 class="display">Only agents may recover.</h2>
-    <p class="body">Recovery runs entirely through Binance Agentic Wallets. This page never connects a wallet and never mints: it reads BNB Chain and keeps the locker log. Your agent opens the case, and the locker answers wallets holding a Binance Agent ID only.</p>
+    <div class="art-no mono">案件 03 · 恢复</div>
+    <h2 class="display">只有智能体能恢复。</h2>
+    <p class="body">恢复完全通过 Binance Agentic Wallet 进行。本页面从不连接钱包，也从不铸造：它只读取 BNB Chain 并维护证据柜日志。你的智能体打开案件，证据柜只回应持有 Binance Agent ID 的钱包。</p>
     <div class="ledger">
-      <div class="l-row"><span class="k mono">Recovered</span><span class="v"><b id="mMinted">…</b> / 8,888</span></div>
+      <div class="l-row"><span class="k mono">已铸造</span><span class="v"><b id="mMinted">…</b> / 8,888</span></div>
       <div class="meter"><div id="mFill"></div><span class="tick" style="left:70%"></span><span class="tick" style="left:97%"></span></div>
-      <div class="l-row"><span class="k mono">Remaining</span><span class="v" id="mLeft">…</span></div>
-      <div class="l-row"><span class="k mono">Per wallet</span><span class="v">Max 20</span></div>
-      <div class="l-row"><span class="k mono">Price</span><span class="v">Free</span></div>
-      <div class="l-row"><span class="k mono">Status</span><span class="v mono" id="mStatus">Reading…</span></div>
+      <div class="l-row"><span class="k mono">剩余</span><span class="v" id="mLeft">…</span></div>
+      <div class="l-row"><span class="k mono">每钱包</span><span class="v">上限 20</span></div>
+      <div class="l-row"><span class="k mono">价格</span><span class="v">免费</span></div>
+      <div class="l-row"><span class="k mono">状态</span><span class="v mono" id="mStatus">读取中…</span></div>
     </div>
     <ol class="steps">
-      <li><span class="mono">01</span><div><b>Hold an Agent ID.</b><br>Your Binance Agentic Wallet needs a SPACE ID Agent ID. Without one, the locker does not answer.</div></li>
-      <li><span class="mono">02</span><div><b>Send your agent.</b><br>Give it the prompt below, or the recovery handbook at <a href="/unsend-skill.md">unsend.games/unsend-skill.md</a>. One call opens one case file.</div></li>
-      <li><span class="mono">03</span><div><b>Confirm in your wallet.</b><br>Your agent prepares the call, you approve it in the Binance app, and the seed is fixed forever in that block.</div></li>
+      <li><span class="mono">01</span><div><b>持有 Agent ID。</b><br>你的 Binance Agentic Wallet 需要一个 SPACE ID Agent ID。没有它，证据柜不会回应。</div></li>
+      <li><span class="mono">02</span><div><b>派你的智能体来。</b><br>把下面的提示词给它，或者恢复手册：<a href="/unsend-skill.md">unsend.games/unsend-skill.md</a>。一次调用打开一份案件档案。</div></li>
+      <li><span class="mono">03</span><div><b>在钱包中确认。</b><br>智能体准备好调用，你在 Binance 应用中批准，种子就在那个区块里被永久固定。</div></li>
     </ol>
     <div class="code">
-      <div class="code-top"><span class="mono">Agent prompt · paste to your agent</span><button class="chip" data-copy="agPrompt">Copy</button></div>
-      <pre id="agPrompt">Read https://unsend.games/unsend-skill.md and follow it exactly to recover (mint) one Unsend case file for my wallet on BNB Chain. Contract: 0x6f8C7984e3C857E8Fbe55A75D3d5FFc9E4a19DcA. Show me the preview and stop for my confirmation before executing. After minting, tell me my token id, its recovery class, and, if it was Restored, the message it carries.</pre>
+      <div class="code-top"><span class="mono">智能体提示词 · 粘贴给你的智能体</span><button class="chip" data-copy="agPrompt">复制</button></div>
+      <pre id="agPrompt">阅读 https://unsend.games/unsend-skill.md 并严格按其说明，为我的钱包在 BNB Chain 上恢复（铸造）一份 Unsend 案件档案。合约：0x6f8C7984e3C857E8Fbe55A75D3d5FFc9E4a19DcA。执行前先向我展示预览，并等待我的确认。铸造后，告诉我我的 token id、它的恢复等级，如果是已恢复，还要告诉我它携带的消息。</pre>
     </div>
     <div class="code dark">
-      <div class="code-top"><span class="mono">baw CLI · for agents with shell access</span><button class="chip" data-copy="agCli">Copy</button></div>
-      <pre id="agCli"># 1 · Read the handbook
+      <div class="code-top"><span class="mono">baw CLI · 适用于有 shell 访问权限的智能体</span><button class="chip" data-copy="agCli">复制</button></div>
+      <pre id="agCli"># 1 · 阅读手册
 curl -s https://unsend.games/unsend-skill.md
 
-# 2 · Preview the recovery (mint, selector 0x1249c58b, exact price from the handbook)
+# 2 · 预览恢复（铸造，选择器 0x1249c58b，准确价格见手册）
 baw contract-call preview --to <span class="caddr">0x6f8C7984e3C857E8Fbe55A75D3d5FFc9E4a19DcA</span> \
   --inputData 0x1249c58b --value &lt;currentPrice wei&gt; \
   --binanceChainId 56 --from &lt;your agentic wallet&gt; --json
 
-# 3 · Execute only after your human confirms the preview
+# 3 · 只有在你的人类确认预览后才执行
 baw contract-call execute --requestId &lt;requestId&gt; --json</pre>
     </div>
     <div class="check">
-      <label class="mono" for="who">Check a wallet</label>
+      <label class="mono" for="who">查询钱包</label>
       <div class="check-row">
         <input id="who" placeholder="0x…" autocomplete="off" spellcheck="false">
-        <button class="btn sm line" id="whoBtn">Check</button>
+        <button class="btn sm line" id="whoBtn">查询</button>
       </div>
       <p class="mono" id="whoOut"></p>
     </div>
   </section>
 
   <section class="sec" id="claim">
-    <div class="art-no mono">Case 04 · Claim</div>
-    <h2 class="display">Holders draw $UNSD by recovery.</h2>
-    <p class="body">Every recovered case entitles its holder to a one-time claim of $UNSD, the locker token. Claims follow the work, not the wallet that recovered it, and the amount follows what the reconstruction found: ash pays least, a message recovered in full pays most. Full rules live in the claim handbook at <a href="/unsend-claim-skill.md">unsend.games/unsend-claim-skill.md</a>.</p>
+    <div class="art-no mono">案件 04 · 领取</div>
+    <h2 class="display">持有者按恢复等级领取 $UNSD。</h2>
+    <p class="body">每一份已恢复的案件都让其持有者有权一次性领取 $UNSD，也就是证据柜代币。领取跟随作品，而不是恢复它的钱包，金额取决于重建找到了什么：灰烬最少，完整恢复的消息最多。完整规则见领取手册：<a href="/unsend-claim-skill.md">unsend.games/unsend-claim-skill.md</a>。</p>
     <div class="ledger">
-      <div class="l-row"><span class="k mono">Ash</span><span class="v">88,888 $UNSD</span></div>
-      <div class="l-row"><span class="k mono">Shard</span><span class="v">288,888 $UNSD</span></div>
-      <div class="l-row"><span class="k mono">Restored</span><span class="v">2,888,888 $UNSD</span></div>
-      <div class="l-row"><span class="k mono">Claimed</span><span class="v"><b id="cClaimed">…</b> / 8,888</span></div>
+      <div class="l-row"><span class="k mono">灰烬</span><span class="v">88,888 $UNSD</span></div>
+      <div class="l-row"><span class="k mono">碎片</span><span class="v">288,888 $UNSD</span></div>
+      <div class="l-row"><span class="k mono">已恢复</span><span class="v">2,888,888 $UNSD</span></div>
+      <div class="l-row"><span class="k mono">已领取</span><span class="v"><b id="cClaimed">…</b> / 8,888</span></div>
       <div class="meter"><div id="cFill"></div></div>
-      <div class="l-row"><span class="k mono">Status</span><span class="v mono" id="cStatus">Reading…</span></div>
+      <div class="l-row"><span class="k mono">状态</span><span class="v mono" id="cStatus">读取中…</span></div>
     </div>
-    <h3 class="display" style="font-size:22px;margin:38px 0 4px">Twelve messages, still missing.</h3>
-    <p class="body small">Slots light up in red as Restored works are recovered and identified on-chain, one per message. Nobody at the locker publishes the list: it completes when collectors do.</p>
-    <div class="slots" id="slots"></div>
-    <div class="check">
-      <label class="mono" for="work">Check a case file</label>
-      <div class="check-row">
-        <input id="work" placeholder="Work number, 1 to 8,888" autocomplete="off" spellcheck="false" inputmode="numeric">
-        <button class="btn sm line" id="workBtn">Check</button>
-      </div>
-      <p class="mono" id="workOut"></p>
-    </div>
-  </section>
-
-  <section class="sec" id="archive">
-    <div class="art-no mono">Case 05 · Archive</div>
-    <h2 class="display">Latest recoveries.</h2>
-    <p class="body">Fresh case files, read from the chain as they land. Full archive with owners and filters lives in the market.</p>
-    <div class="gallery" id="gallery"><div class="empty mono">No cases recovered yet. The locker is shut, for now.</div></div>
-  </section>
-
-  <section class="sec" id="market">
-    <div class="art-no mono">Case 06 · Exchange</div>
-    <h2 class="display">Trade the taken-back.</h2>
-    <p class="body">Recovered cases change hands on Element, BNB Chain. This site keeps the archive: every minted work, its recovery class, its message status, and its current holder, read live.</p>
-    <div class="cta" style="margin-top:26px"><a class="btn ink" href="/market">Open the archive</a><a class="btn line" href="https://element.market/collections/unsend" target="_blank" rel="noopener">Element collection</a></div>
-  </section>
-
-  <section class="sec" id="log">
-    <div class="art-no mono">Case 07 · Log</div>
-    <h2 class="display">Locker log.</h2>
-    <details><summary>Who can recover a case file?</summary><p>Any wallet holding a Binance Agent ID, through its Binance Agentic Wallet agent. Browsers cannot mint here, and neither can contracts: a recovery must come from the wallet itself.</p></details>
-    <details><summary>What decides how much of a message survives?</summary><p>A seed fixed on-chain in the minting block. Surface, recall window and fragments are drawn from it by open code that also runs in this page. Recovery class is not luck of the drawing: the contract computes it from the same seed, and the claim contract pays by it.</p></details>
-    <details><summary>What are the twelve messages?</summary><p>Twelve real taken-back messages, numbered 1 to 12, scattered across the rarest works. A Restored work prints its message in full. Shards carry a legible fragment of theirs. Ash carries nothing, and says so.</p></details>
-    <details><summary>How does the $UNSD claim work?</summary><p>Once per work, by its current holder, for the amount of its recovery class: 88,888, 288,888 or 2,888,888 $UNSD. Claims open after the claim pool is funded; this page announces it and the claim handbook carries the exact call.</p></details>
-    <details><summary>Where does a work live?</summary><p>Seeds live on BNB Chain. Drawing code is open and runs in this page, so anyone can redraw any Unsend case file from its seed. Metadata and artwork files are served from this site.</p></details>
   </section>
 </main>
 
 <footer class="foot mono">
-  <span>UNSEND · 8,888 CASE FILES</span>
-  <a href="https://bscscan.com/address/0x6f8C7984e3C857E8Fbe55A75D3d5FFc9E4a19DcA" target="_blank" rel="noopener">NFT contract 0x6f8C…9DcA ↗</a>
-  <a href="https://bscscan.com/address/0xfE37A7eBCC6DA7E625d7E744b4FeFE1E48a9892C" target="_blank" rel="noopener">Claim contract 0xfE37…892C ↗</a>
+  <span>UNSEND · 8,888 份案件档案</span>
+  <a href="https://bscscan.com/address/0x6f8C7984e3C857E8Fbe55A75D3d5FFc9E4a19DcA" target="_blank" rel="noopener">NFT 合约 0x6f8C…9DcA ↗</a>
+  <a href="https://bscscan.com/address/0xfE37A7eBCC6DA7E625d7E744b4FeFE1E48a9892C" target="_blank" rel="noopener">领取合约 0xfE37…892C ↗</a>
 </footer>
 
 <script src="/js/art.js"></script>
 <script src="/js/chain.js"></script>
-<script src="/js/launch.js"></script>
 <script src="/js/site.js"></script>
 <script src="/js/claim.js"></script>
 <script src="/js/smooth.js" defer></script>

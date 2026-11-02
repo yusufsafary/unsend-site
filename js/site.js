@@ -5,7 +5,7 @@
   const $ = (s) => document.querySelector(s);
   const fmt = (n) => n.toLocaleString('en');
   const hex = (n) => '0x' + BigInt(n).toString(16).padStart(64, '0');
-  const clsLabel = (st) => st.cls === 2 ? 'Restored · Message No. ' + (st.msgIndex + 1) : st.clsName;
+  const clsLabel = (st) => st.cls === 2 ? '已恢复 · 第 ' + (st.msgIndex + 1) + ' 条消息' : st.clsName;
 
   // ---------- sample case files (Case 02) ----------
   const SAMPLES = [3, 710, 1976, 16];
@@ -17,7 +17,7 @@
       const r = window.UnsendArt.render(hex(d), 0);
       const fig = document.createElement('figure');
       fig.className = 'form' + (r.stats.cls === 1 ? ' shard' : '');
-      fig.innerHTML = r.svg + '<figcaption><b>' + clsLabel(r.stats) + '</b><span>' + r.stats.palette + ' · Recalled after ' + r.stats.recalled + '</span></figcaption>';
+      fig.innerHTML = r.svg + '<figcaption><b>' + clsLabel(r.stats) + '</b><span>' + r.stats.palette + ' · 撤回时间 ' + r.stats.recalled + '</span></figcaption>';
       grid.appendChild(fig);
     });
     const pals = $('#pals');
@@ -51,11 +51,11 @@
       panel.classList.add('glitching');
       setTimeout(function () {
         const st = paint();
-        if (read) read.textContent = 'Attempt ' + String(attempts).padStart(2, '0') + ' · Recovery ' + st.clsName + ' · Recalled after ' + st.recalled;
+        if (read) read.textContent = '尝试 ' + String(attempts).padStart(2, '0') + ' · 恢复：' + st.clsName + ' · 撤回时间：' + st.recalled;
         if (note) {
           note.textContent = st.cls === 2
-            ? 'Recovered in full. Most never come back.'
-            : (st.cls === 1 ? 'Partial recovery. A fragment survived, the rest is gone.' : 'Nothing recovered. Only the placeholder remains.');
+            ? '完整恢复。大多数消息再也回不来了。'
+            : (st.cls === 1 ? '部分恢复。一个片段留了下来，其余都消失了。' : '什么都没恢复。只剩下占位符。');
           note.classList.toggle('hit', st.cls === 2);
         }
       }, 240);
@@ -71,11 +71,9 @@
     const mf = $('#mFill'); if (mf) mf.style.width = (s.minted / s.max * 100).toFixed(2) + '%';
     const st = $('#mStatus');
     if (st) {
-      if (s.minted >= s.max) st.textContent = 'Sold out';
-      else if (s.open) st.textContent = 'Recovering live';
-      else if (typeof LAUNCH_AT !== 'undefined' && Date.now() < LAUNCH_AT) st.innerHTML = 'Opens 2 Nov 2026 · 11.00 UTC · <span data-cd></span>';
-      else st.textContent = 'Recovery opens soon';
-      if (typeof applyLaunch === 'function') applyLaunch();
+      if (s.minted >= s.max) st.textContent = '已售罄';
+      else if (s.open) st.textContent = '实时恢复中';
+      else st.textContent = '恢复即将开放';
     }
   }
   function poll() {
@@ -108,13 +106,13 @@
     if (!btn) return;
     btn.addEventListener('click', function () {
       const a = (inp.value || '').trim();
-      if (!/^0x[0-9a-fA-F]{40}$/.test(a)) { out.textContent = 'That does not look like a wallet address.'; return; }
-      out.textContent = 'Reading contract…';
+      if (!/^0x[0-9a-fA-F]{40}$/.test(a)) { out.textContent = '这不像是钱包地址。'; return; }
+      out.textContent = '正在读取合约…';
       window.UnsendChain.walletInfo(a).then(function (w) {
-        if (!w.hasAgentId) out.textContent = 'No Agent ID. This wallet cannot recover.';
-        else if (w.minted >= 20) out.textContent = 'Agent ID held. 20 cases recovered. Wallet limit reached.';
-        else out.textContent = 'Agent ID held. ' + w.minted + ' of 20 cases recovered. Ready.';
-      }).catch(function () { out.textContent = 'Could not reach BNB Chain. Try again.'; });
+        if (!w.hasAgentId) out.textContent = '没有 Agent ID。此钱包无法恢复。';
+        else if (w.minted >= 20) out.textContent = '已持有 Agent ID。已恢复 20 个案件。已达到钱包上限。';
+        else out.textContent = '已持有 Agent ID。已恢复 ' + w.minted + ' / 20 个案件。可以恢复。';
+      }).catch(function () { out.textContent = '无法连接 BNB Chain。请重试。'; });
     });
   })();
 
@@ -124,8 +122,8 @@
       const el = document.getElementById(b.getAttribute('data-copy'));
       if (!el) return;
       if (navigator.clipboard) navigator.clipboard.writeText(el.innerText);
-      b.textContent = 'Copied';
-      setTimeout(function () { b.textContent = 'Copy'; }, 1600);
+      b.textContent = '已复制';
+      setTimeout(function () { b.textContent = '复制'; }, 1600);
     });
   });
 })();
